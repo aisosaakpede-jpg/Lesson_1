@@ -14,12 +14,6 @@ class Pet:
         self.pet_name = pet_name
         self.user_name = user_name
         self.animal = animal
-    def set_health(self,health_status):
-        self.approved = ["healthy","sick","injured"]
-        if self.__health_status in self.approved:
-            self.__health_status = health_status
-        else:
-            print("Invalid health info")
     def display(self):
         pass
 class Dog(Pet):
@@ -72,18 +66,13 @@ class Fish(Pet):
 d = Dog("Tommy","Anna","dog","sick")
 c = Cat("Lola","Silvie","cat","injured")
 f = Fish("Max","Siddarth","fish","healthy")
+pets = [d,c,f]
 print("---Displaying information and condition---")
+for i in pets:
+    i.display()
+    i.condition()
+    print("")
 
-d.display()
-d.condition()
-print("")
-c.display()
-c.condition()
-print("")
-f.display()
-f.condition()
-print("")
-print("")
 print("---before setter method---")
 f.__health_status = "injured"
 f.condition()
